@@ -6,7 +6,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AppLoading from 'expo-app-loading';
 import { useFonts, Comfortaa_300Light, Comfortaa_400Regular, Comfortaa_500Medium, Comfortaa_600SemiBold, Comfortaa_700Bold, } from '@expo-google-fonts/comfortaa';
-import { FaBeer } from 'react-icons/fa';
+import { AntDesign } from '@expo/vector-icons'; 
+import { Feather } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 
 /* starting page -> this is what the user will first see when they download the app. they can sign up or log in */
 function StartingPage({ navigation }){
@@ -83,8 +87,145 @@ function HomePage({navigation}) {
     <View style={styles.container3}>
       <View style={styles.navContainer}>
         <View style={styles.navBar}>
-          <Pressable style={styles.iconBehave} onPress={() => navigation.navigate('Home Page')}>
-          </Pressable>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Bank Page')}>
+          <MaterialCommunityIcons name="bank-outline" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Budget Page')}>
+          <Feather name="bold" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Home Page')}>
+          <AntDesign name="home" size={24} color="black"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Tips Page')}>
+          <AntDesign name="gift" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Profile Page')}>
+          <AntDesign name="user" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+function BankPage({navigation}) {
+  return (
+    <View style={styles.container3}>
+      <View style={styles.navContainer}>
+        <View style={styles.navBar}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Bank Page')}>
+          <MaterialCommunityIcons name="bank-outline" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Budget Page')}>
+          <Feather name="bold" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Home Page')}>
+          <AntDesign name="home" size={24} color="black"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Tips Page')}>
+          <AntDesign name="gift" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Profile Page')}>
+          <AntDesign name="user" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+function BudgetPage({navigation}) {
+  return (
+    <View style={styles.container3}>
+      <View style={styles.navContainer}>
+        <View style={styles.navBar}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Bank Page')}>
+          <MaterialCommunityIcons name="bank-outline" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Budget Page')}>
+          <Feather name="bold" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Home Page')}>
+          <AntDesign name="home" size={24} color="black"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Tips Page')}>
+          <AntDesign name="gift" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Profile Page')}>
+          <AntDesign name="user" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+function TipsPage({navigation}) {
+  return (
+    <View style={styles.container3}>
+      <View style={styles.navContainer}>
+        <View style={styles.navBar}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Bank Page')}>
+          <MaterialCommunityIcons name="bank-outline" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Budget Page')}>
+          <Feather name="bold" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Home Page')}>
+          <AntDesign name="home" size={24} color="black"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Tips Page')}>
+          <AntDesign name="gift" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Profile Page')}>
+          <AntDesign name="user" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+function ProfilePage({navigation}) {
+  return (
+    <View style={styles.container3}>
+      <View style={styles.navContainer}>
+        <View style={styles.navBar}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Bank Page')}>
+          <MaterialCommunityIcons name="bank-outline" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Budget Page')}>
+          <Feather name="bold" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Home Page')}>
+          <AntDesign name="home" size={24} color="black"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Tips Page')}>
+          <AntDesign name="gift" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Profile Page')}>
+          <AntDesign name="user" size={24} color="black" />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -110,6 +251,10 @@ export default function App() {
         <Stack.Screen name="Sign Up Page" component={SignUpPage} />
         <Stack.Screen name="Enter Your Name Page" component={EnterYourNamePage} />
         <Stack.Screen name="Home Page" component={HomePage} />
+        <Stack.Screen name="Bank Page" component={BankPage} />
+        <Stack.Screen name="Budget Page" component={BudgetPage} />
+        <Stack.Screen name="Tips Page" component={TipsPage} />
+        <Stack.Screen name="Profile Page" component={ProfilePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -139,7 +284,7 @@ const styles = StyleSheet.create({
 
   loginButton: {
     width: "42%",
-    borderRadius: 10,
+    borderRadius: 22.5,
     height: 45,
     alignItems: "center",
     justifyContent: "center",
@@ -158,7 +303,7 @@ const styles = StyleSheet.create({
 
   signUpButton: {
     width: "42%",
-    borderRadius: 10,
+    borderRadius: 22.5,
     height: 45,
     alignItems: "center",
     justifyContent: "center",
@@ -231,10 +376,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     borderTopWidth: 0.5,
     borderTopColor: '#EBEBEB',
+    paddingTop: 7, 
+    paddingBottom: 5, 
   },
 
   iconBehave: {
-    padding: 30,
+    backgroundColor: '#F3D485',
+    borderRadius: 20,
+    padding: 8,
   },
 
 
