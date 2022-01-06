@@ -1,18 +1,12 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image, TextInput, } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TextInput, Pressable } from 'react-native';
 import { SafeAreaView, ScrollView, TouchableOpacity, useColorScheme, } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AppLoading from 'expo-app-loading';
-import {
-  useFonts,
-  Comfortaa_300Light,
-  Comfortaa_400Regular,
-  Comfortaa_500Medium,
-  Comfortaa_600SemiBold,
-  Comfortaa_700Bold,
-} from '@expo-google-fonts/comfortaa';
+import { useFonts, Comfortaa_300Light, Comfortaa_400Regular, Comfortaa_500Medium, Comfortaa_600SemiBold, Comfortaa_700Bold, } from '@expo-google-fonts/comfortaa';
+import { FaBeer } from 'react-icons/fa';
 
 /* starting page -> this is what the user will first see when they download the app. they can sign up or log in */
 function StartingPage({ navigation }){
@@ -46,13 +40,14 @@ function LoginPage({ navigation }) {
       <TextInput style ={styles.loginInput} underlineColorAndroid="transparent" placeholder='Email'/>
       <TextInput style ={styles.loginInput} underlineColorAndroid="transparent" placeholder='Password'/>
 
-      <TouchableOpacity style={styles.loginButton2} onPress={() => navigation.navigate()}>
+      <TouchableOpacity style={styles.loginButton2} onPress={() => navigation.navigate('Home Page')}>
       <Text style={styles.loginButtonText2}>LOG IN</Text>
       </TouchableOpacity>
     </View>
   );
 }
 
+/* signup page -> the user will enter their email and password to sign up */
 function SignUpPage({navigation}) {
   return (
     <View style={styles.container2}>
@@ -61,9 +56,37 @@ function SignUpPage({navigation}) {
       <TextInput style ={styles.loginInput} underlineColorAndroid="transparent" placeholder='Email'/>
       <TextInput style ={styles.loginInput} underlineColorAndroid="transparent" placeholder='Password'/>
 
-      <TouchableOpacity style={styles.loginButton2} onPress={() => navigation.navigate()}>
+      <TouchableOpacity style={styles.loginButton2} onPress={() => navigation.navigate('Enter Your Name Page')}>
       <Text style={styles.loginButtonText2}>SIGN UP</Text>
       </TouchableOpacity>
+    </View>
+  );
+}
+
+/* enter your name page -> after signing up, the user enter's their name for personalization in the app */
+function EnterYourNamePage({navigation}) {
+  return (
+    <View style={styles.container2}>
+      <Text style ={styles.loginTitle}>Enter Your Name</Text>
+
+      <TextInput style ={styles.loginInput} underlineColorAndroid="transparent" placeholder='Enter your name'/>
+
+      <TouchableOpacity style={styles.loginButton2} onPress={() => navigation.navigate('Home Page')}>
+      <Text style={styles.loginButtonText2}>LET'S GO!</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+function HomePage({navigation}) {
+  return (
+    <View style={styles.container3}>
+      <View style={styles.navContainer}>
+        <View style={styles.navBar}>
+          <Pressable style={styles.iconBehave} onPress={() => navigation.navigate('Home Page')}>
+          </Pressable>
+        </View>
+      </View>
     </View>
   );
 }
@@ -85,6 +108,8 @@ export default function App() {
         <Stack.Screen name="Starting Page" component={StartingPage} />
         <Stack.Screen name="Login Page" component={LoginPage} />
         <Stack.Screen name="Sign Up Page" component={SignUpPage} />
+        <Stack.Screen name="Enter Your Name Page" component={EnterYourNamePage} />
+        <Stack.Screen name="Home Page" component={HomePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -184,4 +209,33 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: 'white',
   },
+
+  /* HOME PAGE ---------------------------*/
+  container3: {
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  navContainer: {
+    position: 'absolute',
+    alignItems: 'center',
+    bottom: 0,
+  },
+
+  navBar: {
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    width: '100%',
+    justifyContent: 'space-evenly',
+    borderTopWidth: 0.5,
+    borderTopColor: '#EBEBEB',
+  },
+
+  iconBehave: {
+    padding: 30,
+  },
+
+
 });
